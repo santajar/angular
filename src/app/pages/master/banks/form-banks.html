@@ -1,0 +1,33 @@
+<div class="modal-header">
+  <h3 class="modal-title">{{vm.title}}</h3>
+</div>
+<div class="modal-body">
+  <form class="form-horizontal" name="vm.frmBankCtrl" novalidate>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="vm.frmBankCtrl.bankId">Bank ID</label>
+      <div class="col-sm-2" ng-class="{'has-error': vm.frmBankCtrl.bankId.$touched && vm.frmBankCtrl.bankId.$invalid}">
+        <input type="text" class="form-control" id="bankId" name="bankId" placeholder="Bank ID" ng-model="vm.bank.bankId" ng-readonly="vm.frmState.bankId" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Nama Bank</label>
+      <div class="col-sm-6" ng-class="{'has-error': vm.frmBankCtrl.name.$touched && vm.frmBankCtrl.name.$invalid}">
+        <input type="text" class="form-control" id="name" name="name" placeholder="Name" ng-model="vm.bank.name" ng-readonly="vm.frmState.nama" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Kode Bank</label>
+      <div class="col-sm-4" ng-class="{'has-error': vm.frmBankCtrl.bankCode.$touched && vm.frmBankCtrl.bankCode.$invalid}">
+        <input type="text" class="form-control" id="bankCode" name="bankCode" placeholder="Bank Code" ng-model="vm.bank.bankCode" ng-readonly="vm.frmState.bankCode" required>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer" ng-if="vm.delete">
+  <button class="btn btn-block" ng-class="vm.btn.submit.style" ng-click="vm.submit()" ng-disabled="vm.btn.submit.state">{{ vm.btn.submit.text | uppercase }}</button>
+  <button class="btn btn-block" ng-class="vm.btn.clear.style" ng-click="vm.clear()" ng-disabled="vm.btn.clear.state">{{ vm.btn.clear.text | uppercase }}</button>
+</div>
+<div class="modal-footer" ng-if="!vm.delete">
+  <button class="btn btn-block" ng-class="vm.btn.submit.style" ng-click="vm.submit()" ng-disabled="vm.btn.submit.state || vm.frmBankCtrl.$pristine || vm.frmBankCtrl.$invalid">{{ vm.btn.submit.text | uppercase }}</button>
+  <button class="btn btn-block" ng-class="vm.btn.clear.style" ng-click="vm.clear()" ng-disabled="vm.btn.clear.state || vm.frmBankCtrl.$pristine">{{ vm.btn.clear.text | uppercase }}</button>
+</div>

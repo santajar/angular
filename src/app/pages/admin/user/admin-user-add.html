@@ -1,0 +1,64 @@
+<div class="col-sm-12" ba-panel>
+      <form class="form-horizontal" name="vm.formUserAdd" ng-submit="vm.addUser()" novalidate>
+            <div class="container">
+                  <div class="row">
+                        <div class="col-lg-12">
+                              <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="username">Username</label>
+                                    <div class="col-sm-4" ng-class="{'has-error': vm.formUserAdd.username.$touched && vm.formUserAdd.username.$invalid}">
+                                          <input type="text" class="form-control" placeholder="username" name="username" id="username" ng-model="vm.formAddUser.username" required>
+                                    </div>
+                              </div>
+                              <div class="form-group">
+                                    <label for="password" class="col-sm-2 control-label">Password</label>
+                                    <div class="col-sm-4" ng-class="{'has-error': vm.formUserAdd.password.$touched && vm.formUserAdd.password.$invalid}">
+                                          <input type="password" class="form-control" id="password" name="password" placeholder="Password" ng-model="vm.formAddUser.password" required>
+                                    </div>
+                              </div>
+                              <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="name">Name</label>
+                                    <div class="col-sm-4" ng-class="{'has-error': vm.formUserAdd.name.$touched && vm.formUserAdd.name.$invalid}">
+                                          <input type="text" class="form-control" placeholder="Name" name="name" id="name" ng-model="vm.formAddUser.name" required>
+                                    </div>
+                              </div>
+                              <div class="form-group">
+                                    <label for="email" class="col-sm-2 control-label">Email</label>
+                                    <div class="col-sm-4" ng-class="{'has-error': vm.formUserAdd.email.$touched && vm.formUserAdd.email.$invalid}">
+                                          <input type="email" class="form-control" id="email" name="email" placeholder="maintenance@fujiseat.com" ng-model="vm.formAddUser.email">
+                                    </div>
+                              </div>
+                              <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="roleId">Role</label>
+                                    <div class="col-sm-4" ng-class="{'has-error': vm.formUserAdd.roleId.$touched && vm.formUserAdd.roleId.$invalid}">
+                                          <ui-select name="roleId" id="roleId" ng-model="vm.formAddUser.idMRole" required on-select="vm.changeRole($model)">
+                                                <ui-select-match>{{$select.selected.roleName}}</ui-select-match>
+                                                <ui-select-choices repeat="item.id as item in vm.roles | filter: $select.search">
+                                                      <div ng-bind-html="item.roleName | highlight: $select.search"></div>
+                                                </ui-select-choices>
+                                          </ui-select>
+                                    </div>
+                              </div>
+                              <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="groupId">Group</label>
+                                    <div class="col-sm-4" ng-class="{'has-error': (vm.formUserAdd.groupId.$touched && vm.formUserAdd.groupId.$invalid)}">
+                                          <ui-select name="groupId" id="groupId" ng-model="vm.formAddUser.idMGroup" required ng-disabled="vm.groups.length < 1">
+                                                <ui-select-match>{{$select.selected.groupName}}</ui-select-match>
+                                                <ui-select-choices repeat="item.id as item in vm.groups | filter: $select.search">
+                                                      <div ng-bind-html="item.groupName | highlight: $select.search"></div>
+                                                </ui-select-choices>
+                                          </ui-select>
+                                    </div>
+                              </div>
+                              <br>
+                              <div class="form-group">
+                                    <div class="col-sm-4 col-sm-offset-2">
+                                          <button type="submit" class="btn btn-primary btn-lg" ng-disabled="vm.formUserAdd.$invalid || vm.submitted">SUBMIT</button>
+                                          <button type="button" class="btn btn-danger btn-lg" ng-click="vm.resetForm()">CANCEL</button>
+                                          <button type="button" class="btn btn-warning btn-lg" ng-click="vm.goBack()">BACK</button>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </form>
+</div>

@@ -1,0 +1,35 @@
+<dashboard-pie-chart></dashboard-pie-chart>
+<div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div
+          ba-panel
+          ba-panel-class="with-scroll horizontal-tabs tabs-panel medium-panel">
+        <div ng-include="'app/pages/tabs/mainTabs.html'"></div>
+      </div>
+    </div>
+  <div class="row">
+  <div class="col-lg-4 col-md-4 col-sm-4"
+       ba-panel
+       ba-panel-title="Resource Availability"
+       ba-panel-class="medium-panel traffic-panel">
+    <traffic-chart></traffic-chart>
+  </div>
+</div>
+  </div>
+  <!-- <div class="row">
+    <div class="col-md-4">
+      <div
+          ba-panel
+          ba-panel-class="with-scroll horizontal-tabs tabs-panel medium-panel">
+        <div ng-include="'app/pages/dashboard/dasboardPieChart/dashboardPieChart.html'"></div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <div class="row accordions-row">
+    <div class="col-md-6" ng-include="'app/pages/ui/tabs/sampleAccordion.html'"></div>
+    <div class="col-md-6" ng-include="'app/pages/ui/tabs/contextualAccordion.html'"></div>
+  </div> -->
+</div>

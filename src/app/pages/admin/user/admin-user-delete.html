@@ -1,0 +1,94 @@
+<form class="form-horizontal" name="formUserDelete" ng-submit="vm.deleteUser()" novalidate>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <h2 class="col-sm-offset-1 col-sm-4">{{vm.title}}</h2>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="id">ID</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="id" id="id" readonly="" ng-model="vm.formDeleteUser.id" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="username">Username</label>
+                    <div class="col-sm-4" ng-class="{'has-error': formUserDelete.username.$touched && formUserDelete.username.$invalid}">
+                        <input type="text" class="form-control" placeholder="username" name="username" id="username" ng-model="vm.formDeleteUser.username" required readonly="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-2 control-label">Password</label>
+                    <div class="col-sm-4" ng-class="{'has-error': formUserDelete.password.$touched && formUserDelete.password.$invalid}">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" ng-model="vm.formDeleteUser.password" required readonly="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="name">Name</label>
+                    <div class="col-sm-4" ng-class="{'has-error': formUserDelete.name.$touched && formUserDelete.name.$invalid}">
+                        <input type="text" class="form-control" placeholder="Name" name="name" id="name" ng-model="vm.formDeleteUser.name" required readonly="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-4" ng-class="{'has-error': formUserDelete.email.$touched && formUserDelete.email.$invalid}">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="maintenance@fujiseat.com" ng-model="vm.formDeleteUser.email" readonly="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="roleId">Role</label>
+                    <div class="col-sm-4" ng-class="{'has-error': formUserDelete.roleId.$touched && formUserDelete.roleId.$invalid}">
+                        <ui-select name="roleId" id="roleId" ng-model="vm.formDeleteUser.idMRole" required ng-disabled="true">
+                            <ui-select-match>{{$select.selected.roleName}}</ui-select-match>
+                            <ui-select-choices repeat="item.id as item in au.roles | filter: $select.search">
+                                <div ng-bind-html="item.roleName | highlight: $select.search"></div>
+                            </ui-select-choices>
+                        </ui-select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="groupId">Group</label>
+                    <div class="col-sm-4" ng-class="{'has-error': (formUserDelete.groupId.$touched && formUserDelete.groupId.$invalid)}">
+                        <ui-select name="groupId" id="groupId" ng-model="vm.formDeleteUser.idMGroup" required ng-disabled="true">
+                            <ui-select-match>{{$select.selected.groupName}}</ui-select-match>
+                            <ui-select-choices repeat="item.id as item in au.groups | filter: $select.search">
+                                <div ng-bind-html="item.groupName | highlight: $select.search"></div>
+                            </ui-select-choices>
+                        </ui-select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="lastUpdate">Last Update</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="lastUpdate" id="lastUpdate" readonly="" ng-model="vm.formDeleteUser.lastUpdate">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="lastUser">Last User</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="lastUser" id="lastUser" readonly="" ng-model="vm.formDeleteUser.lastUser">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="createDate">Create Date</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="createDate" id="createDate" readonly="" ng-model="vm.formDeleteUser.createDate">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="createUser">Create User</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="createUser" id="createUser" readonly="" ng-model="vm.formDeleteUser.createUser">
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-2">
+                        <button type="submit" class="btn btn-danger btn-lg">DELETE</button>
+                        <button type="button" class="btn btn-warning btn-lg" ng-click="vm.goBack()">BACK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

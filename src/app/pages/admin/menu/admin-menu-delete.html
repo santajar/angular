@@ -1,0 +1,71 @@
+<form class="form-horizontal" name="formMenuDelete" ng-submit="vm.deleteMenu()" novalidate>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="id">ID</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="id" id="id" readonly="" ng-model="vm.formDeleteMenu.id" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="name">Menu Name</label>
+                    <div class="col-sm-4" ng-class="{'has-error': formMenuDelete.menuName.$touched && formMenuDelete.menuName.$invalid}">
+                        <input type="text" class="form-control" placeholder="Menu Name" name="menuName" id="menuName" ng-model="vm.formDeleteMenu.menuName" required>
+                    </div>
+                </div>
+               <div class="form-group">
+                    <label class="col-sm-2 control-label" for="name">Parent ID</label>
+                    <div class="col-sm-4" ng-class="{'has-error': formMenuDelete.parentId.$touched && formMenuDelete.parentId.$invalid}">
+                        <input type="text" class="form-control" placeholder="Parent ID" name="parentId" id="parentId" ng-model="vm.formDeleteMenu.parentId">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="name">Sequnce</label>
+                    <div class="col-sm-4" ng-class="{'has-error': formMenuDelete.sequence.$touched && formMenuDelete.sequence.$invalid}">
+                        <input type="text" class="form-control" placeholder="Sequence ID" name="sequence" id="sequence" ng-model="vm.formDeleteMenu.sequence" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="name">Link</label>
+                    <div class="col-sm-4" ng-class="{'has-error': formMenuDelete.link.$touched && formMenuDelete.link.$invalid}">
+                        <input type="text" class="form-control" placeholder="link" name="link" id="link" ng-model="vm.formDeleteMenu.link" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="lastUpdate">Last Update</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="lastUpdate" id="lastUpdate" readonly="" ng-model="vm.formDeleteMenu.lastUpdate">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="lastUser">Last User</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="lastUser" id="lastUser" readonly="" ng-model="vm.formDeleteMenu.lastUser">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="createDate">Create Date</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="createDate" id="createDate" readonly="" ng-model="vm.formDeleteMenu.createDate">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="createUser">Create User</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="createUser" id="createUser" readonly="" ng-model="vm.formDeleteMenu.createUser">
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-2">
+                        <button type="submit" class="btn btn-danger btn-lg">DELETE</button>
+                        <button type="button" class="btn btn-warning btn-lg" ng-click="vm.goBack()">BACK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

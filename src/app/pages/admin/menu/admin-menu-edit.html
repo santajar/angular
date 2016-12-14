@@ -1,0 +1,76 @@
+<form class="form-horizontal" name="formMenuEdit" ng-submit="vm.updateMenu()" novalidate>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="id">ID</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="id" id="id" readonly="" ng-model="vm.formUpdateMenu.id" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="name">Menu Name</label>
+                    <div class="col-sm-4" ng-class="{'has-error': formMenuEdit.menuName.$touched && formMenuEdit.menuName.$invalid}">
+                        <input type="text" class="form-control" placeholder="Menu Name" name="menuName" id="menuName" ng-model="vm.formUpdateMenu.menuName" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                      <label class="col-sm-2 control-label" for="name">Parent Menu</label>
+                      <div class="col-sm-4" ng-class="{'has-error': formMenuEdit.parentId.$touched && formMenuEdit.parentId.$invalid}">
+                            <ui-select name="idMMenu" id="idMMenu" ng-model="vm.formUpdateMenu.parentId">
+                                  <ui-select-match allow-clear="true">{{$select.selected.menuName}}</ui-select-match>
+                                  <ui-select-choices repeat="item.id as item in am.menus | filter: $select.search">
+                                        <div ng-bind-html="item.menuName | highlight: $select.search"></div>
+                                  </ui-select-choices>
+                            </ui-select>
+                      </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="name">Sequnce</label>
+                    <div class="col-sm-4" ng-class="{'has-error': formMenuEdit.sequence.$touched && formMenuEdit.sequence.$invalid}">
+                        <input type="number" class="form-control" placeholder="Sequence ID" name="sequence" id="sequence" ng-model="vm.formUpdateMenu.sequence" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="name">Link</label>
+                    <div class="col-sm-4" ng-class="{'has-error': formMenuEdit.link.$touched && formMenuEdit.link.$invalid}">
+                        <input type="text" class="form-control" placeholder="link" name="link" id="link" ng-model="vm.formUpdateMenu.link" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="lastUpdate">Last Update</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="lastUpdate" id="lastUpdate" readonly="" ng-model="vm.formUpdateMenu.lastUpdate">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="lastUser">Last User</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="lastUser" id="lastUser" readonly="" ng-model="vm.formUpdateMenu.lastUser">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="createDate">Create Date</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="createDate" id="createDate" readonly="" ng-model="vm.formUpdateMenu.createDate">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="createUser">Create User</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="createUser" id="createUser" readonly="" ng-model="vm.formUpdateMenu.createUser">
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-2">
+                        <button type="submit" class="btn btn-primary btn-lg" ng-disabled="formUpdateMenu.$invalid">SUBMIT</button>
+                        <!--<button type="button" class="btn btn-danger btn-lg">CANCEL</button>-->
+                        <button type="button" class="btn btn-warning btn-lg" ng-click="vm.goBack()">BACK</button>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,84 @@
+{
+  "name": "backoffice-citrapay-angular",
+  "version": "0.0.1",
+  "description": "CMS Backoffice Citrapay Front-End Project",
+  "main": "",
+  "authors": [
+    "Muhammad Hariz Faza <m.hariz.faza@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "Ionicons": "ionicons#~2.0.1",
+    "angular": "~1.5.7",
+    "angular-animate": "~1.5.7",
+    "angular-cookies": "~1.5.7",
+    "angular-touch": "~1.5.7",
+    "angular-sanitize": "~1.5.7",
+    "angular-messages": "~1.5.7",
+    "angular-aria": "~1.5.7",
+    "angular-slimscroll": "~1.1.5",
+    "angular-toastr": "^1.7.0",
+    "angular-datatables": "^0.5.4",
+    "angular-ui-select": "^0.18.0",
+    "angular-ui-sortable": "~0.13.4",
+    "angular-ui-router": "~0.2.16",
+    "angular-bootstrap": "~1.3.3",
+    "angular-progress-button-styles": "~0.1.0",
+    "animate.css": "~3.4.0",
+    "bootstrap": "~3.3.5",
+    "font-awesome": "fontawesome#~4.4.0",
+    "highlight": "~8.8.0",
+    "jquery": "~2.1.4",
+    "jquery-ui": "~1.11.4",
+    "jquery.easing": "~1.3.1",
+    "leaflet": "~0.7.5",
+    "moment": "^2.14.1",
+    "slimScroll": "jquery-slimscroll#~1.3.6",
+    "ionrangeslider": "~2.1.2",
+    "ng-js-tree": "~0.0.7",
+    "restangular": "^1.5.2",
+    "ngSweetAlert": "angular-sweetalert#^1.1.0",
+    "oclazyload": "^1.0.9",
+    "angular-md5": "^0.1.10",
+    "angular-daterangepicker": "^0.2.2",
+    "angular-file-upload": "^2.3.4",
+    "ng-file-upload": "^12.0.4",
+    "datatables.net-buttons-dt": "^1.2.1",
+    "angular-bootstrap-lightbox": "^0.12.0"
+  },
+  "resolutions": {
+    "angular": "~1.5.7",
+    "jquery": "~2.1.4",
+    "angular-bootstrap": "~1.3.3"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "js/dropdown.js"
+      ]
+    },
+    "slimScroll": {
+      "main": "./jquery.slimscroll.js"
+    },
+    "font-awesome": {
+      "main": [
+        "css/font-awesome.css",
+        "fonts/FontAwesome.otf",
+        "fonts/fontawesome-webfont.eot",
+        "fonts/fontawesome-webfont.svg",
+        "fonts/fontawesome-webfont.ttf",
+        "fonts/fontawesome-webfont.woff",
+        "fonts/fontawesome-webfont.woff2"
+      ]
+    }
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

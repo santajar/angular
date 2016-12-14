@@ -1,0 +1,26 @@
+<div class="body-bg"></div>
+<main ng-if="$pageFinishedLoading" ng-class="{ 'menu-collapsed': $baSidebarService.isMenuCollapsed() }">
+
+  <ba-sidebar></ba-sidebar>
+  <page-top></page-top>
+
+  <div class="al-main">
+    <div class="al-content">
+      <content-top></content-top>
+      <div ui-view></div>
+    </div>
+  </div>
+
+  <footer class="al-footer clearfix">
+    <div style="color: white;" class="al-footer-right">&copy; 2016 <abbr title="PT. Citra Multi Services">JAZTI</abbr>. All Rights Reserved.</div>
+    <div class="al-footer-main clearfix">
+      <div class="al-copy"><strong>v0.0.1</strong></div>
+    </div>
+  </footer>
+
+  <back-top></back-top>
+</main>
+
+<div id="preloader" ng-show="!$pageFinishedLoading">
+  <div></div>
+</div>

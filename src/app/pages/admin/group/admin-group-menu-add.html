@@ -1,0 +1,21 @@
+<div class="modal-header">
+      <h3 class="modal-title">Tambah Menu Baru</h3>
+</div>
+<div class="modal-body">
+      <form class="form-horizontal" name="vm.menuAdd" novalidate>
+            <div class="form-group">
+                  <label class="col-sm-2 control-label" for="machineId">No. Item</label>
+                  <div class="col-sm-4" ng-class="{'has-error': vm.menuAdd.part.$touched && vm.menuAdd.part.$invalid}">
+                        <ui-select name="menu" id="menu" ng-model="vm.formAdd.menu" required>
+                              <ui-select-match>{{$select.selected.menuName}}</ui-select-match>
+                              <ui-select-choices repeat="item.id as item in vm.menus | filter: $select.search" ui-disable-choice="vm.disable(item.id)">
+                                    <div ng-bind-html="item.menuName | highlight: $select.search"></div>
+                              </ui-select-choices>
+                        </ui-select>
+                  </div>
+            </div>
+      </form>
+</div>
+<div class="modal-footer">
+      <button type="submit" class="btn btn-primary btn-block" ng-click="vm.simpan()" ng-disabled="vm.menuAdd.$invalid">ADD MENU</button>
+</div>

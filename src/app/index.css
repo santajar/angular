@@ -1,0 +1,83 @@
+.btn:hover {
+  -webkit-transform: none;
+  transform: none;
+}
+
+.al-sidebar-sublist > li a {
+  font-size: 11px;
+}
+
+#formTabel td {
+  vertical-align: middle;
+}
+
+.mt30{
+    margin-top: 30px;
+}
+
+.mt50 {
+    margin-top: 50px;
+}
+
+.mt{
+    position: relative;
+}
+
+
+input.input-mt {
+    font-size:18px;
+    padding:10px 10px 10px 5px;
+    display:block;
+    width:100%;
+    border:none;
+    border-bottom:2px solid #999;
+    /*background-color: #f3f3f4;*/
+}
+input:focus.input-mt {
+    outline:none;
+}
+
+/* LABEL ======================================= */
+label.mt-label {
+    color:#999;
+    font-size:18px;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    top:10px;
+    left:5px;
+    transition:0.2s ease all;
+}
+
+/* active state */
+input:focus.input-mt ~ label.mt-label, input:valid ~ label.mt-label {
+    top:-20px;
+    font-size:14px;
+    color:#5264AE;
+}
+
+
+/* BOTTOM BARS ================================= */
+.bar 	{ position:relative; display:block; width:100%; }
+.bar:before, .bar:after 	{
+    content:'';
+    height:2px;
+    width:0;
+    bottom:1px;
+    position:absolute;
+    background:#5264AE;
+    transition:0.2s ease all;
+    -moz-transition:0.2s ease all;
+    -webkit-transition:0.2s ease all;
+}
+.bar:before {
+    left:50%;
+}
+.bar:after {
+    right:50%;
+}
+
+/* active state */
+input:focus.input-mt ~ .bar:before, input:focus.input-mt ~ .bar:after {
+    width:50%;
+}

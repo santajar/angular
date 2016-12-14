@@ -1,0 +1,84 @@
+<div class="modal-header">
+  <h3 class="modal-title">{{ vm.title }}</h3>
+</div>
+<div class="modal-body">
+  <form class="form-horizontal" name="vm.frmCACtrl" novalidate>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Kode CA</label>
+      <div class="col-sm-6" ng-class="{'has-error': vm.frmCACtrl.caCode.$touched && vm.frmCACtrl.caCode.$invalid}">
+        <input type="text" class="form-control" id="caCode" name="caCode" placeholder="Masukkan Kode CA" ng-model="vm.ca.caCode" ng-readonly="vm.frmState.caCode" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Nama CA</label>
+      <div class="col-sm-4" ng-class="{'has-error': vm.frmCACtrl.caName.$touched && vm.frmCACtrl.caName.$invalid}">
+        <input type="text" class="form-control" id="caName" name="caName" placeholder="Nama CA" ng-model="vm.ca.caName" ng-readonly="vm.frmState.caName" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="vm.frmCACtrl.bankId">Bank</label>
+      <div class="col-sm-8" ng-class="{'has-error': vm.frmCACtrl.bankId.$touched && vm.frmCACtrl.bankId.$invalid}">
+        <ui-select name="bankId" id="bankId" ng-model="vm.ca.bankId" ng-disabled="vm.frmState.bankId" required>
+          <ui-select-match placeholder="--- Pilih Bank ---">{{$select.selected.bankId}} - {{$select.selected.name}}</ui-select-match>
+          <ui-select-choices repeat="bank.bankId as bank in vm.banks | filter: $select.search">
+            <div ng-bind-html="bank.name | highlight: $select.search"></div>
+            <small>
+              ID : <span ng-bind-html="''+bank.bankId | highlight: $select.search"> {{ bank.bankId }} </span>
+              KODE : <span ng-bind-html="''+bank.bankCode | highlight: $select.search"> {{ bank.bankCode }} </span>
+            </small>
+          </ui-select-choices>
+        </ui-select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="vm.frmCACtrl.headerResi">Header Resi</label>
+      <div class="col-sm-6" ng-class="{'has-error': vm.frmCACtrl.headerResi.$touched && vm.frmCACtrl.headerResi.$invalid}">
+        <input type="text" class="form-control" id="headerResi" name="headerResi" placeholder="Header Resi" ng-model="vm.ca.headerResi" ng-readonly="vm.frmState.headerResi" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="vm.frmCACtrl.ppn">PPN</label>
+      <div class="col-sm-2" ng-class="{'has-error': vm.frmCACtrl.ppn.$touched && vm.frmCACtrl.ppn.$invalid}">
+        <input type="text" class="form-control" id="ppn" name="ppn" placeholder="PPN" ng-model="vm.ca.ppn" ng-readonly="vm.frmState.ppn" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="vm.frmCACtrl.pph">PPH</label>
+      <div class="col-sm-2" ng-class="{'has-error': vm.frmCACtrl.pph.$touched && vm.frmCACtrl.pph.$invalid}">
+        <input type="text" class="form-control" id="pph" name="pph" placeholder="PPH" ng-model="vm.ca.pph" ng-readonly="vm.frmState.pph" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="vm.frmCACtrl.limitFeeTrf">Limit Fee Transfer</label>
+      <div class="col-sm-6" ng-class="{'has-error': vm.frmCACtrl.limitFeeTrf.$touched && vm.frmCACtrl.limitFeeTrf.$invalid}">
+        <input type="text" class="form-control" id="limitFeeTrf" name="limitFeeTrf" placeholder="Limit Fee Transfer" ng-model="vm.ca.limitFeeTrf" ng-readonly="vm.frmState.limitFeeTrf" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="vm.frmCACtrl.masterCa">Tipe CA</label>
+      <div class="col-sm-3" ng-class="{'has-error': vm.frmCACtrl.masterCa.$touched && vm.frmCACtrl.masterCa.$invalid}">
+        <select class="form-control" id="masterCa" name="masterCa" placeholder="Tipe CA" ng-model="vm.ca.masterCa" ng-disabled="vm.frmState.masterCa" required>
+          <option value="0">Master CA</option>
+          <option value="1">Non Master CA</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="vm.frmCACtrl.feeType">Fee Type</label>
+      <div class="col-sm-3" ng-class="{'has-error': vm.frmCACtrl.feeType.$touched && vm.frmCACtrl.feeType.$invalid}">
+        <select class="form-control" id="feeType" name="feeType" placeholder="Fee Type" ng-model="vm.ca.feeType" ng-disabled="vm.frmState.feeType" required>
+          <option value="0">Fee Dibayar Kemudian</option>
+          <option value="1">Fee Dibayar Dimuka</option>
+        </select>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer" ng-if="vm.delete">
+  <button class="btn btn-block" ng-class="vm.btn.submit.style" ng-click="vm.submit()" ng-disabled="vm.btn.submit.state">{{ vm.btn.submit.text | uppercase }}</button>
+  <button class="btn btn-block" ng-class="vm.btn.clear.style" ng-click="vm.clear()" ng-disabled="vm.btn.clear.state">{{ vm.btn.clear.text | uppercase }}</button>
+</div>
+<div class="modal-footer" ng-if="!vm.delete">
+  <button class="btn btn-block" ng-class="vm.btn.submit.style" ng-click="vm.submit()" ng-disabled="vm.btn.submit.state || vm.frmCACtrl.$pristine || vm.frmCACtrl.$invalid">{{ vm.btn.submit.text | uppercase }}</button>
+  <button class="btn btn-block" ng-class="vm.btn.clear.style" ng-click="vm.clear()" ng-disabled="vm.btn.clear.state || vm.frmCACtrl.$pristine">{{ vm.btn.clear.text | uppercase }}</button>
+</div>

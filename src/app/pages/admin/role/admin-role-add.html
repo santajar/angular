@@ -1,0 +1,23 @@
+<form class="form-horizontal" name="formRoleAdd" ng-submit="vm.addRole()" novalidate>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+              
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="name">Role Name</label>
+                    <div class="col-sm-4" ng-class="{'has-error': formRoleAdd.roleName.$touched && formRoleAdd.roleName.$invalid}">
+                        <input type="text" class="form-control" placeholder="Role Name" name="roleName" id="roleName" ng-model="vm.formAddRole.roleName" required>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-2">
+                        <button type="submit" class="btn btn-primary btn-lg" ng-disabled="formRoleAdd.$invalid || vm.submitted">SUBMIT</button>
+                        <!--<button type="button" class="btn btn-danger btn-lg">CANCEL</button>-->
+                        <button type="button" class="btn btn-warning btn-lg" ng-click="vm.goBack()">BACK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

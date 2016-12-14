@@ -1,0 +1,35 @@
+<div ba-panel ba-panel-class="with-scroll horizontal-tabs tabs-panel xmedium-panel">
+      <uib-tabset active="$tabSetStatus.activeTab">
+            <uib-tab heading="Change Password">
+
+                  <form class="form-horizontal" name="vm.formPassword" novalidate ng-submit="vm.changePassword()">
+                        <div class="form-group">
+                              <label class="col-sm-2 control-label" for="passwordLama">Password Lama</label>
+                              <div class="col-sm-4" ng-class="{'has-error': vm.formPassword.passwordLama.$touched && vm.formPassword.passwordLama.$invalid}">
+                                    <input type="password" class="form-control" placeholder="Password Lama" name="passwordLama" id="passwordLama" ng-model="vm.formPwd.passwordLama" required>
+                              </div>
+                        </div>
+                        <div class="form-group">
+                              <label class="col-sm-2 control-label" for="passwordBaru">Password Baru</label>
+                              <div class="col-sm-4" ng-class="{'has-error': vm.formPassword.passwordBaru.$touched && vm.formPassword.passwordBaru.$invalid}">
+                                    <input type="password" class="form-control" placeholder="Password Baru" name="passwordBaru" id="passwordBaru" ng-model="vm.formPwd.passwordBaru" required>
+                              </div>
+                        </div>
+                        <div class="form-group">
+                              <label class="col-sm-2 control-label" for="ulangPasswordBaru">Ulangi Password Baru</label>
+                              <div class="col-sm-4" ng-class="{'has-error': vm.formPassword.ulangPasswordBaru.$touched && vm.formPassword.ulangPasswordBaru.$invalid}">
+                                    <input type="password" class="form-control" placeholder="Ulangi Password Baru" name="ulangPasswordBaru" id="ulangPasswordBaru" ng-model="vm.formPwd.ulangPasswordBaru" required>
+                              </div>
+                        </div>
+
+                        <div class="form-group">
+                              <div class="col-sm-4 col-sm-offset-2">
+                                    <button type="submit" class="btn btn-primary btn-lg" ng-disabled="vm.formPassword.$invalid || vm.submitted">UBAH PASSWORD</button>
+                                    <button type="button" class="btn btn-danger btn-lg" ng-click="vm.resetForm()">CANCEL</button>
+                              </div>
+                        </div>
+                  </form>
+
+            </uib-tab>
+      </uib-tabset>
+</div>
