@@ -32,6 +32,5 @@
       'datatables.buttons',
       'ngFileUpload',
       'bootstrapLightbox'
-
     ]);
 })();

@@ -27,7 +27,6 @@
     'datatables.buttons',
     'ngFileUpload',
     'bootstrapLightbox',
-
     'BlurAdmin.theme',
     'BlurAdmin.pages'
   ]);
